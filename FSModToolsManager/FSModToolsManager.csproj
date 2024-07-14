@@ -13,8 +13,13 @@
     <FileVersion>$(AssemblyVersion)</FileVersion>
 	<ProductVersion>$(AssemblyVersion)</ProductVersion>
     <SignAssembly>False</SignAssembly>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
 	  
   </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="ico.ico" />
+  </ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />

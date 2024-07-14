@@ -24,6 +24,7 @@ partial class FormMain {
     /// the contents of this method with the code editor.
     /// </summary>
     private void InitializeComponent() {
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
         tableLayoutPanel1 = new TableLayoutPanel();
         launchersLayoutPanel = new TableLayoutPanel();
         ddContainer = new Panel();
@@ -33,8 +34,10 @@ partial class FormMain {
         btnMax = new Button();
         btnMin = new Button();
         label1 = new Label();
+        pictureBox1 = new PictureBox();
         tableLayoutPanel1.SuspendLayout();
         tableLayoutPanel2.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
         SuspendLayout();
         // 
         // tableLayoutPanel1
@@ -173,11 +176,23 @@ partial class FormMain {
         label1.BackColor = Color.FromArgb(31, 31, 31);
         label1.Font = new Font("Calibri", 9F);
         label1.ForeColor = Color.FromArgb(174, 174, 174);
-        label1.Location = new Point(6, 9);
+        label1.Location = new Point(48, 11);
         label1.Name = "label1";
         label1.Size = new Size(222, 29);
         label1.TabIndex = 3;
         label1.Text = "FSModToolsManager";
+        // 
+        // pictureBox1
+        // 
+        pictureBox1.ErrorImage = null;
+        pictureBox1.Image = Properties.Resources.fstm;
+        pictureBox1.Location = new Point(5, 5);
+        pictureBox1.Margin = new Padding(0);
+        pictureBox1.Name = "pictureBox1";
+        pictureBox1.Size = new Size(40, 40);
+        pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+        pictureBox1.TabIndex = 4;
+        pictureBox1.TabStop = false;
         // 
         // FormMain
         // 
@@ -188,17 +203,20 @@ partial class FormMain {
         BorderWidth = 3;
         CaptionColour = Color.FromArgb(31, 31, 31);
         ClientSize = new Size(1200, 800);
+        Controls.Add(pictureBox1);
         Controls.Add(label1);
         Controls.Add(tableLayoutPanel2);
         Controls.Add(tableLayoutPanel1);
         Controls.Add(menuStrip1);
         FormBorderStyle = FormBorderStyle.None;
+        Icon = (Icon)resources.GetObject("$this.Icon");
         MainMenuStrip = menuStrip1;
         Name = "FormMain";
         Padding = new Padding(3, 50, 3, 3);
         Text = "FormMain";
         tableLayoutPanel1.ResumeLayout(false);
         tableLayoutPanel2.ResumeLayout(false);
+        ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
         ResumeLayout(false);
         PerformLayout();
     }
@@ -214,4 +232,5 @@ partial class FormMain {
     private Label label1;
     private TableLayoutPanel launchersLayoutPanel;
     private Panel ddContainer;
+    private PictureBox pictureBox1;
 }

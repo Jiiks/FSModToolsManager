@@ -15,7 +15,9 @@ public class Tool {
     public bool DisplayInMain { get; set; }
 
     [JsonIgnore]
-    public string Id;
+    public string Id { get; set; }
+    [JsonIgnore]
+    public Control Ctrl { get; set; }
 
     public Tool Run(IConfig cfg, Utils.Utils utils) {
         if (Location == null || Location == string.Empty) {

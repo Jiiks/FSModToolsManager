@@ -33,11 +33,10 @@ internal class MenuSetTools : UcToolStripItem {
             CheckOnClick = true,
             Checked = tool.DisplayInMain
         };
-        Debug.WriteLine($"{tool.Name} {tool.DisplayInMain}");
 
         dispBtn.CheckedChanged += (s, e) => {
             tool.DisplayInMain = dispBtn.Checked;
-            // TODO Show/Hide Control
+            tool.Ctrl.Visible = dispBtn.Checked;
             tool.Save(_config);
         };
 

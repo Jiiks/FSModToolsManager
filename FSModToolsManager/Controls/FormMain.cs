@@ -1,5 +1,4 @@
 ﻿using FSModToolsManager.Services;
-using System.Diagnostics;
 using System.Reflection;
 
 namespace FSModToolsManager.Controls;
@@ -24,8 +23,10 @@ internal partial class FormMain : FormBase {
 
         foreach(var (k, v) in cfg.GetTools()) {
             if (v.ToolType == Core.EToolType.Default) {
-                var btn = new UcToolBtn(v, utils, cfg);
-                launchersLayoutPanel.Controls.Add(btn);
+                v.Ctrl = new UcToolBtn(v, utils, cfg) {
+                    Visible = v.DisplayInMain
+                };
+                launchersLayoutPanel.Controls.Add(v.Ctrl);
             }
         }
 

@@ -13,6 +13,7 @@ public interface IConfig {
     public void Load();
     public void Save(Tool tool);
     public void Save(MiscExe miscExeSet);
+
     public Exception? GetLastError();
 
     public IDictionary<string, Tool> GetTools();
@@ -44,6 +45,10 @@ internal struct Conf {
     public List<LinkSet> Links { get; set; }
     [JsonPropertyName("miscexe")]
     public List<MiscExe> MiscExecutables { get; set; }
+    [JsonPropertyName("customlinks")]
+    public List<LinkSet> CustomLinks { get; set; }
+    [JsonPropertyName("customexes")]
+    public List<MiscExe> CustomMiscExecutables { get; set; }
 }
 
 internal class Config : IConfig {
@@ -116,7 +121,11 @@ internal class Config : IConfig {
             t.Id = k;
             _conf.Tools[k] = t;
         }
+
+        LoadCustoms();
     }
+
+    private void LoadCustoms() { }
 
     public void Save(Tool tool) {
         _conf.Tools[tool.Id] = tool;

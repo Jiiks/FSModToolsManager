@@ -1,4 +1,5 @@
 ﻿using FSModToolsManager.Services;
+using System.Diagnostics;
 using System.Reflection;
 
 namespace FSModToolsManager.Controls;
@@ -41,6 +42,18 @@ internal partial class FormMain : FormBase {
             if (miscExeSet.Items.Count <= 0) continue;
             menuStrip1.Items.Add(new MenuSetMiscExecutables(cfg, utils, miscExeSet));
         }
+
+        var addBtn = new UcToolStripItem("+");
+        addBtn.Click += (s, e) => {
+            using var addDialog = new DialogAddToolbarItem() { StartPosition = FormStartPosition.CenterParent };
+            addDialog.ShowDialog(this);
+            if (addDialog.DialogResult != DialogResult.OK) return;
+            if (addDialog.Title == null || addDialog.Title == string.Empty) return;
+            menuStrip1.Items.Remove(addBtn);
+            menuStrip1.Items.Add(new UcToolStripItem(addDialog.Title));
+            menuStrip1.Items.Add(addBtn);
+        };
+        menuStrip1.Items.Add(addBtn);
 
     }
 

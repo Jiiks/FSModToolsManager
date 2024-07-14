@@ -32,6 +32,7 @@ partial class FormMain {
         btnMax = new Button();
         btnMin = new Button();
         label1 = new Label();
+        ddContainer = new Panel();
         tableLayoutPanel1.SuspendLayout();
         tableLayoutPanel2.SuspendLayout();
         SuspendLayout();
@@ -45,6 +46,7 @@ partial class FormMain {
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
         tableLayoutPanel1.Controls.Add(launchersLayoutPanel, 1, 1);
+        tableLayoutPanel1.Controls.Add(ddContainer, 2, 1);
         tableLayoutPanel1.Dock = DockStyle.Fill;
         tableLayoutPanel1.Location = new Point(3, 74);
         tableLayoutPanel1.Margin = new Padding(10);
@@ -153,6 +155,13 @@ partial class FormMain {
         label1.TabIndex = 3;
         label1.Text = "FSModToolsManager";
         // 
+        // ddContainer
+        // 
+        ddContainer.Location = new Point(718, 8);
+        ddContainer.Name = "ddContainer";
+        ddContainer.Size = new Size(427, 612);
+        ddContainer.TabIndex = 1;
+        // 
         // FormMain
         // 
         AutoScaleDimensions = new SizeF(13F, 32F);
@@ -187,4 +196,5 @@ partial class FormMain {
     private Button btnMin;
     private Label label1;
     private TableLayoutPanel launchersLayoutPanel;
+    private Panel ddContainer;
 }

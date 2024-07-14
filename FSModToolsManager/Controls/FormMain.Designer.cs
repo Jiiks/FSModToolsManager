@@ -31,24 +31,28 @@ partial class FormMain {
         btnMax = new Button();
         btnMin = new Button();
         label1 = new Label();
+        launchersLayoutPanel = new FlowLayoutPanel();
+        tableLayoutPanel1.SuspendLayout();
         tableLayoutPanel2.SuspendLayout();
         SuspendLayout();
         // 
         // tableLayoutPanel1
         // 
         tableLayoutPanel1.BackColor = Color.FromArgb(64, 64, 64);
-        tableLayoutPanel1.ColumnCount = 3;
-        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
-        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
+        tableLayoutPanel1.ColumnCount = 4;
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60F));
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40F));
+        tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
+        tableLayoutPanel1.Controls.Add(launchersLayoutPanel, 1, 1);
         tableLayoutPanel1.Dock = DockStyle.Fill;
         tableLayoutPanel1.Location = new Point(3, 74);
         tableLayoutPanel1.Margin = new Padding(10);
         tableLayoutPanel1.Name = "tableLayoutPanel1";
         tableLayoutPanel1.RowCount = 3;
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F));
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
         tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 10F));
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
         tableLayoutPanel1.Size = new Size(1194, 723);
         tableLayoutPanel1.TabIndex = 0;
         // 
@@ -136,6 +140,15 @@ partial class FormMain {
         label1.TabIndex = 3;
         label1.Text = "FSModToolsManager";
         // 
+        // launchersLayoutPanel
+        // 
+        launchersLayoutPanel.Dock = DockStyle.Fill;
+        launchersLayoutPanel.FlowDirection = FlowDirection.TopDown;
+        launchersLayoutPanel.Location = new Point(8, 8);
+        launchersLayoutPanel.Name = "launchersLayoutPanel";
+        launchersLayoutPanel.Size = new Size(704, 707);
+        launchersLayoutPanel.TabIndex = 0;
+        // 
         // FormMain
         // 
         AutoScaleDimensions = new SizeF(13F, 32F);
@@ -154,6 +167,7 @@ partial class FormMain {
         Name = "FormMain";
         Padding = new Padding(3, 50, 3, 3);
         Text = "FormMain";
+        tableLayoutPanel1.ResumeLayout(false);
         tableLayoutPanel2.ResumeLayout(false);
         ResumeLayout(false);
         PerformLayout();
@@ -168,4 +182,5 @@ partial class FormMain {
     private Button btnMax;
     private Button btnMin;
     private Label label1;
+    private FlowLayoutPanel launchersLayoutPanel;
 }

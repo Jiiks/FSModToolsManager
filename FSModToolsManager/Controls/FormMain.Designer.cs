@@ -25,13 +25,13 @@ partial class FormMain {
     /// </summary>
     private void InitializeComponent() {
         tableLayoutPanel1 = new TableLayoutPanel();
+        launchersLayoutPanel = new TableLayoutPanel();
         menuStrip1 = new MenuStrip();
         tableLayoutPanel2 = new TableLayoutPanel();
         btnClose = new Button();
         btnMax = new Button();
         btnMin = new Button();
         label1 = new Label();
-        launchersLayoutPanel = new FlowLayoutPanel();
         tableLayoutPanel1.SuspendLayout();
         tableLayoutPanel2.SuspendLayout();
         SuspendLayout();
@@ -55,6 +55,19 @@ partial class FormMain {
         tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
         tableLayoutPanel1.Size = new Size(1194, 723);
         tableLayoutPanel1.TabIndex = 0;
+        // 
+        // launchersLayoutPanel
+        // 
+        launchersLayoutPanel.AutoScroll = true;
+        launchersLayoutPanel.ColumnCount = 1;
+        launchersLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+        launchersLayoutPanel.Dock = DockStyle.Fill;
+        launchersLayoutPanel.Location = new Point(8, 8);
+        launchersLayoutPanel.Name = "launchersLayoutPanel";
+        launchersLayoutPanel.RowCount = 1;
+        launchersLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
+        launchersLayoutPanel.Size = new Size(704, 707);
+        launchersLayoutPanel.TabIndex = 0;
         // 
         // menuStrip1
         // 
@@ -140,15 +153,6 @@ partial class FormMain {
         label1.TabIndex = 3;
         label1.Text = "FSModToolsManager";
         // 
-        // launchersLayoutPanel
-        // 
-        launchersLayoutPanel.Dock = DockStyle.Fill;
-        launchersLayoutPanel.FlowDirection = FlowDirection.TopDown;
-        launchersLayoutPanel.Location = new Point(8, 8);
-        launchersLayoutPanel.Name = "launchersLayoutPanel";
-        launchersLayoutPanel.Size = new Size(704, 707);
-        launchersLayoutPanel.TabIndex = 0;
-        // 
         // FormMain
         // 
         AutoScaleDimensions = new SizeF(13F, 32F);
@@ -182,5 +186,5 @@ partial class FormMain {
     private Button btnMax;
     private Button btnMin;
     private Label label1;
-    private FlowLayoutPanel launchersLayoutPanel;
+    private TableLayoutPanel launchersLayoutPanel;
 }

@@ -22,6 +22,12 @@ internal partial class FormMain : FormBase {
 
         menuStrip1.Items.Add(new MenuSetTools(cfg, utils));
 
+        foreach(var (k, v) in cfg.GetTools()) {
+            var btn = new Button() { Text = v.Name, Height = 50, Dock = DockStyle.Fill, MaximumSize = new Size(1000, 50) };
+            
+            launchersLayoutPanel.Controls.Add(btn);
+        }
+
         foreach (var linkset in cfg.GetLinks()) {
             if (linkset.Links.Count <= 0) continue;
             menuStrip1.Items.Add(new MenuSetLinks(cfg, utils, linkset));

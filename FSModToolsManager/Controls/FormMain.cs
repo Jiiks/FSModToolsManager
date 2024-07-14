@@ -61,6 +61,7 @@ internal partial class FormMain : FormBase {
 
     }
 
+ 
 
 
     private void btnMin_Click(object sender, EventArgs e) {
@@ -93,7 +94,7 @@ internal partial class FormMain : FormBase {
     }
 
     private void btnMax_MouseLeave(object sender, EventArgs e) {
-        if(WindowState == FormWindowState.Maximized) {
+        if (WindowState == FormWindowState.Maximized) {
             btnMax.BackgroundImage = Resources.restore_normal;
             return;
         }
@@ -106,6 +107,19 @@ internal partial class FormMain : FormBase {
 
     private void btnClose_MouseLeave(object sender, EventArgs e) {
         btnClose.BackgroundImage = Resources.close_normal;
+    }
+
+    private void btnPin_Click(object sender, EventArgs e) {
+        TopMost = !TopMost;
+        btnPin.BackgroundImage = TopMost ? Resources.pinned_normal : Resources.notpinned_normal;
+    }
+
+    private void btnPin_MouseEnter(object sender, EventArgs e) {
+        btnPin.BackgroundImage = TopMost ? Resources.pinned_hover : Resources.notpinned_hover;
+    }
+
+    private void btnPin_MouseLeave(object sender, EventArgs e) {
+        btnPin.BackgroundImage = TopMost ? Resources.pinned_normal : Resources.notpinned_normal;
     }
 }
 

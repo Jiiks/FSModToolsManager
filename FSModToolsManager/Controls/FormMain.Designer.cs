@@ -30,9 +30,10 @@ partial class FormMain {
         ddContainer = new Panel();
         menuStrip1 = new MenuStrip();
         tableLayoutPanel2 = new TableLayoutPanel();
-        btnClose = new Button();
-        btnMax = new Button();
-        btnMin = new Button();
+        btnPin = new Label();
+        btnClose = new Label();
+        btnMax = new Label();
+        btnMin = new Label();
         label1 = new Label();
         pictureBox1 = new PictureBox();
         tableLayoutPanel1.SuspendLayout();
@@ -96,22 +97,44 @@ partial class FormMain {
         // 
         tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
         tableLayoutPanel2.BackColor = Color.FromArgb(31, 31, 31);
-        tableLayoutPanel2.ColumnCount = 5;
+        tableLayoutPanel2.ColumnCount = 7;
         tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
         tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
         tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
         tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
         tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
-        tableLayoutPanel2.Controls.Add(btnClose, 5, 0);
-        tableLayoutPanel2.Controls.Add(btnMax, 2, 0);
-        tableLayoutPanel2.Controls.Add(btnMin, 0, 0);
-        tableLayoutPanel2.Location = new Point(926, 0);
+        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
+        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
+        tableLayoutPanel2.Controls.Add(btnPin, 0, 0);
+        tableLayoutPanel2.Controls.Add(btnClose, 6, 0);
+        tableLayoutPanel2.Controls.Add(btnMax, 4, 0);
+        tableLayoutPanel2.Controls.Add(btnMin, 2, 0);
+        tableLayoutPanel2.Location = new Point(848, 0);
         tableLayoutPanel2.Margin = new Padding(0);
         tableLayoutPanel2.Name = "tableLayoutPanel2";
         tableLayoutPanel2.RowCount = 1;
         tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        tableLayoutPanel2.Size = new Size(274, 50);
+        tableLayoutPanel2.Size = new Size(349, 50);
         tableLayoutPanel2.TabIndex = 2;
+        // 
+        // btnPin
+        // 
+        btnPin.BackColor = Color.FromArgb(31, 31, 31);
+        btnPin.BackgroundImage = Properties.Resources.notpinned_normal;
+        btnPin.BackgroundImageLayout = ImageLayout.Stretch;
+        btnPin.Dock = DockStyle.Fill;
+       // btnPin.FlatAppearance.BorderSize = 0;
+        btnPin.FlatStyle = FlatStyle.Flat;
+        btnPin.Font = new Font("Calibri", 9F, FontStyle.Bold);
+        btnPin.ForeColor = Color.FromArgb(87, 79, 87);
+        btnPin.Location = new Point(3, 3);
+        btnPin.Name = "btnPin";
+        btnPin.Size = new Size(74, 44);
+        btnPin.TabIndex = 3;
+       // btnPin.UseVisualStyleBackColor = false;
+        btnPin.Click += btnPin_Click;
+        btnPin.MouseEnter += btnPin_MouseEnter;
+        btnPin.MouseLeave += btnPin_MouseLeave;
         // 
         // btnClose
         // 
@@ -119,15 +142,15 @@ partial class FormMain {
         btnClose.BackgroundImage = Properties.Resources.close_normal;
         btnClose.BackgroundImageLayout = ImageLayout.Stretch;
         btnClose.Dock = DockStyle.Fill;
-        btnClose.FlatAppearance.BorderSize = 0;
+      //  btnClose.FlatAppearance.BorderSize = 0;
         btnClose.FlatStyle = FlatStyle.Flat;
         btnClose.Font = new Font("Calibri", 9F);
         btnClose.ForeColor = Color.FromArgb(87, 79, 87);
-        btnClose.Location = new Point(183, 3);
+        btnClose.Location = new Point(273, 3);
         btnClose.Name = "btnClose";
-        btnClose.Size = new Size(88, 44);
+        btnClose.Size = new Size(74, 44);
         btnClose.TabIndex = 2;
-        btnClose.UseVisualStyleBackColor = false;
+       // btnClose.UseVisualStyleBackColor = false;
         btnClose.Click += btnClose_Click;
         btnClose.MouseEnter += btnClose_MouseEnter;
         btnClose.MouseLeave += btnClose_MouseLeave;
@@ -138,15 +161,15 @@ partial class FormMain {
         btnMax.BackgroundImage = Properties.Resources.maximize_normal;
         btnMax.BackgroundImageLayout = ImageLayout.Stretch;
         btnMax.Dock = DockStyle.Fill;
-        btnMax.FlatAppearance.BorderSize = 0;
+       // btnMax.FlatAppearance.BorderSize = 0;
         btnMax.FlatStyle = FlatStyle.Flat;
         btnMax.Font = new Font("Calibri", 9F);
         btnMax.ForeColor = Color.FromArgb(87, 79, 87);
-        btnMax.Location = new Point(93, 3);
+        btnMax.Location = new Point(183, 3);
         btnMax.Name = "btnMax";
         btnMax.Size = new Size(74, 44);
         btnMax.TabIndex = 1;
-        btnMax.UseVisualStyleBackColor = false;
+        //btnMax.UseVisualStyleBackColor = false;
         btnMax.Click += btnMax_Click;
         btnMax.MouseEnter += btnMax_MouseEnter;
         btnMax.MouseLeave += btnMax_MouseLeave;
@@ -157,15 +180,15 @@ partial class FormMain {
         btnMin.BackgroundImage = Properties.Resources.minimize_normal;
         btnMin.BackgroundImageLayout = ImageLayout.Stretch;
         btnMin.Dock = DockStyle.Fill;
-        btnMin.FlatAppearance.BorderSize = 0;
+      //  btnMin.FlatAppearance.BorderSize = 0;
         btnMin.FlatStyle = FlatStyle.Flat;
         btnMin.Font = new Font("Calibri", 9F, FontStyle.Bold);
         btnMin.ForeColor = Color.FromArgb(87, 79, 87);
-        btnMin.Location = new Point(3, 3);
+        btnMin.Location = new Point(93, 3);
         btnMin.Name = "btnMin";
         btnMin.Size = new Size(74, 44);
         btnMin.TabIndex = 0;
-        btnMin.UseVisualStyleBackColor = false;
+       // btnMin.UseVisualStyleBackColor = false;
         btnMin.Click += btnMin_Click;
         btnMin.MouseEnter += btnMin_MouseEnter;
         btnMin.MouseLeave += btnMin_MouseLeave;
@@ -226,11 +249,12 @@ partial class FormMain {
     private TableLayoutPanel tableLayoutPanel1;
     private MenuStrip menuStrip1;
     private TableLayoutPanel tableLayoutPanel2;
-    private Button btnClose;
-    private Button btnMax;
-    private Button btnMin;
+    private Label btnClose;
+    private Label btnMax;
+    private Label btnMin;
     private Label label1;
     private TableLayoutPanel launchersLayoutPanel;
     private Panel ddContainer;
     private PictureBox pictureBox1;
+    private Label btnPin;
 }

@@ -26,13 +26,13 @@ partial class FormMain {
     private void InitializeComponent() {
         tableLayoutPanel1 = new TableLayoutPanel();
         launchersLayoutPanel = new TableLayoutPanel();
+        ddContainer = new Panel();
         menuStrip1 = new MenuStrip();
         tableLayoutPanel2 = new TableLayoutPanel();
         btnClose = new Button();
         btnMax = new Button();
         btnMin = new Button();
         label1 = new Label();
-        ddContainer = new Panel();
         tableLayoutPanel1.SuspendLayout();
         tableLayoutPanel2.SuspendLayout();
         SuspendLayout();
@@ -71,6 +71,13 @@ partial class FormMain {
         launchersLayoutPanel.Size = new Size(704, 707);
         launchersLayoutPanel.TabIndex = 0;
         // 
+        // ddContainer
+        // 
+        ddContainer.Location = new Point(718, 8);
+        ddContainer.Name = "ddContainer";
+        ddContainer.Size = new Size(427, 612);
+        ddContainer.TabIndex = 1;
+        // 
         // menuStrip1
         // 
         menuStrip1.BackColor = Color.FromArgb(80, 80, 80);
@@ -85,68 +92,85 @@ partial class FormMain {
         // tableLayoutPanel2
         // 
         tableLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+        tableLayoutPanel2.BackColor = Color.FromArgb(31, 31, 31);
         tableLayoutPanel2.ColumnCount = 5;
-        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
         tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
-        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
         tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 10F));
-        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 60F));
+        tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
         tableLayoutPanel2.Controls.Add(btnClose, 5, 0);
         tableLayoutPanel2.Controls.Add(btnMax, 2, 0);
         tableLayoutPanel2.Controls.Add(btnMin, 0, 0);
-        tableLayoutPanel2.Location = new Point(1000, 0);
+        tableLayoutPanel2.Location = new Point(926, 0);
         tableLayoutPanel2.Margin = new Padding(0);
         tableLayoutPanel2.Name = "tableLayoutPanel2";
         tableLayoutPanel2.RowCount = 1;
         tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-        tableLayoutPanel2.Size = new Size(200, 50);
+        tableLayoutPanel2.Size = new Size(274, 50);
         tableLayoutPanel2.TabIndex = 2;
         // 
         // btnClose
         // 
+        btnClose.BackColor = Color.FromArgb(31, 31, 31);
+        btnClose.BackgroundImage = Properties.Resources.close_normal;
+        btnClose.BackgroundImageLayout = ImageLayout.Stretch;
         btnClose.Dock = DockStyle.Fill;
+        btnClose.FlatAppearance.BorderSize = 0;
         btnClose.FlatStyle = FlatStyle.Flat;
         btnClose.Font = new Font("Calibri", 9F);
-        btnClose.ForeColor = Color.FromArgb(174, 174, 174);
-        btnClose.Location = new Point(143, 3);
+        btnClose.ForeColor = Color.FromArgb(87, 79, 87);
+        btnClose.Location = new Point(183, 3);
         btnClose.Name = "btnClose";
-        btnClose.Size = new Size(54, 44);
+        btnClose.Size = new Size(88, 44);
         btnClose.TabIndex = 2;
-        btnClose.Text = "X";
-        btnClose.UseVisualStyleBackColor = true;
+        btnClose.UseVisualStyleBackColor = false;
         btnClose.Click += btnClose_Click;
+        btnClose.MouseEnter += btnClose_MouseEnter;
+        btnClose.MouseLeave += btnClose_MouseLeave;
         // 
         // btnMax
         // 
+        btnMax.BackColor = Color.FromArgb(31, 31, 31);
+        btnMax.BackgroundImage = Properties.Resources.maximize_normal;
+        btnMax.BackgroundImageLayout = ImageLayout.Stretch;
         btnMax.Dock = DockStyle.Fill;
+        btnMax.FlatAppearance.BorderSize = 0;
         btnMax.FlatStyle = FlatStyle.Flat;
         btnMax.Font = new Font("Calibri", 9F);
-        btnMax.ForeColor = Color.FromArgb(174, 174, 174);
-        btnMax.Location = new Point(73, 3);
+        btnMax.ForeColor = Color.FromArgb(87, 79, 87);
+        btnMax.Location = new Point(93, 3);
         btnMax.Name = "btnMax";
-        btnMax.Size = new Size(54, 44);
+        btnMax.Size = new Size(74, 44);
         btnMax.TabIndex = 1;
-        btnMax.Text = "[]";
-        btnMax.UseVisualStyleBackColor = true;
+        btnMax.UseVisualStyleBackColor = false;
         btnMax.Click += btnMax_Click;
+        btnMax.MouseEnter += btnMax_MouseEnter;
+        btnMax.MouseLeave += btnMax_MouseLeave;
         // 
         // btnMin
         // 
+        btnMin.BackColor = Color.FromArgb(31, 31, 31);
+        btnMin.BackgroundImage = Properties.Resources.minimize_normal;
+        btnMin.BackgroundImageLayout = ImageLayout.Stretch;
         btnMin.Dock = DockStyle.Fill;
+        btnMin.FlatAppearance.BorderSize = 0;
         btnMin.FlatStyle = FlatStyle.Flat;
         btnMin.Font = new Font("Calibri", 9F, FontStyle.Bold);
-        btnMin.ForeColor = Color.FromArgb(174, 174, 174);
+        btnMin.ForeColor = Color.FromArgb(87, 79, 87);
         btnMin.Location = new Point(3, 3);
         btnMin.Name = "btnMin";
-        btnMin.Size = new Size(54, 44);
+        btnMin.Size = new Size(74, 44);
         btnMin.TabIndex = 0;
-        btnMin.Text = "-";
-        btnMin.UseVisualStyleBackColor = true;
+        btnMin.UseVisualStyleBackColor = false;
         btnMin.Click += btnMin_Click;
+        btnMin.MouseEnter += btnMin_MouseEnter;
+        btnMin.MouseLeave += btnMin_MouseLeave;
         // 
         // label1
         // 
         label1.AutoSize = true;
+        label1.BackColor = Color.FromArgb(31, 31, 31);
         label1.Font = new Font("Calibri", 9F);
         label1.ForeColor = Color.FromArgb(174, 174, 174);
         label1.Location = new Point(6, 9);
@@ -155,21 +179,14 @@ partial class FormMain {
         label1.TabIndex = 3;
         label1.Text = "FSModToolsManager";
         // 
-        // ddContainer
-        // 
-        ddContainer.Location = new Point(718, 8);
-        ddContainer.Name = "ddContainer";
-        ddContainer.Size = new Size(427, 612);
-        ddContainer.TabIndex = 1;
-        // 
         // FormMain
         // 
         AutoScaleDimensions = new SizeF(13F, 32F);
         AutoScaleMode = AutoScaleMode.Font;
         BackColor = Color.FromArgb(48, 48, 48);
-        BorderColour = Color.FromArgb(48, 48, 48);
+        BorderColour = Color.FromArgb(31, 31, 31);
         BorderWidth = 3;
-        CaptionColour = Color.FromArgb(48, 48, 48);
+        CaptionColour = Color.FromArgb(31, 31, 31);
         ClientSize = new Size(1200, 800);
         Controls.Add(label1);
         Controls.Add(tableLayoutPanel2);

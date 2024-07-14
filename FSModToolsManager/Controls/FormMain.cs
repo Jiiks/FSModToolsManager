@@ -1,4 +1,5 @@
-﻿using FSModToolsManager.Services;
+﻿using FSModToolsManager.Properties;
+using FSModToolsManager.Services;
 using System.Diagnostics;
 using System.Reflection;
 
@@ -9,6 +10,8 @@ internal partial class FormMain : FormBase {
         SetStyle(ControlStyles.ResizeRedraw, true);
 
         InitializeComponent();
+
+
 
         menuStrip1.Renderer = new UcToolStripProfessionalRenderer();
         menuStrip1.BackColor = Color.FromArgb(30, 30, 30);
@@ -22,14 +25,15 @@ internal partial class FormMain : FormBase {
 
         menuStrip1.Items.Add(new MenuSetTools(cfg, utils));
 
-        foreach(var (k, v) in cfg.GetTools()) {
+        foreach (var (k, v) in cfg.GetTools()) {
             if (v.ToolType == Core.EToolType.Default) {
                 v.Ctrl = new UcToolBtn(v, utils, cfg) {
                     Visible = v.DisplayInMain
                 };
                 launchersLayoutPanel.Controls.Add(v.Ctrl);
             } else {
-                ddContainer.Controls.Add(new UcDragDrop(v));
+                v.Ctrl = new UcDragDrop(v);
+                ddContainer.Controls.Add(v.Ctrl);
             }
         }
 
@@ -57,6 +61,8 @@ internal partial class FormMain : FormBase {
 
     }
 
+
+
     private void btnMin_Click(object sender, EventArgs e) {
         WindowState = FormWindowState.Minimized;
     }
@@ -68,6 +74,38 @@ internal partial class FormMain : FormBase {
 
     private void btnClose_Click(object sender, EventArgs e) {
         Application.Exit();
+    }
+
+    private void btnMin_MouseEnter(object sender, EventArgs e) {
+        btnMin.BackgroundImage = Resources.minimize_hover;
+    }
+
+    private void btnMin_MouseLeave(object sender, EventArgs e) {
+        btnMin.BackgroundImage = Resources.minimize_normal;
+    }
+
+    private void btnMax_MouseEnter(object sender, EventArgs e) {
+        if (WindowState == FormWindowState.Maximized) {
+            btnMax.BackgroundImage = Resources.restore_hover;
+            return;
+        }
+        btnMax.BackgroundImage = Resources.maximize_hover;
+    }
+
+    private void btnMax_MouseLeave(object sender, EventArgs e) {
+        if(WindowState == FormWindowState.Maximized) {
+            btnMax.BackgroundImage = Resources.restore_normal;
+            return;
+        }
+        btnMax.BackgroundImage = Resources.maximize_normal;
+    }
+
+    private void btnClose_MouseEnter(object sender, EventArgs e) {
+        btnClose.BackgroundImage = Resources.close_hover;
+    }
+
+    private void btnClose_MouseLeave(object sender, EventArgs e) {
+        btnClose.BackgroundImage = Resources.close_normal;
     }
 }
 

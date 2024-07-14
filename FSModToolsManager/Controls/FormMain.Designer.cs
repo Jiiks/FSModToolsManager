@@ -228,7 +228,7 @@ partial class FormMain {
         MainMenuStrip = menuStrip1;
         Name = "FormMain";
         Padding = new Padding(3, 50, 3, 3);
-        Text = "FormMain";
+        Text = "FSModToolsManager";
         tableLayoutPanel1.ResumeLayout(false);
         tableLayoutPanel2.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

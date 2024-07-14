@@ -1,0 +1,102 @@
+{
+  "tools": {
+    "witchy": {
+      "name": "Witchy",
+      "location": "",
+      "download": "https://github.com/ividyon/WitchyBND/releases",
+      "type": 1,
+      "display": true
+    },
+    "smithbox": {
+      "name": "SmithBox",
+      "location": "",
+      "download": "https://github.com/vawser/Smithbox",
+      "type": 0,
+      "display": true
+    },
+    "darkscript": {
+      "name": "DarkScript",
+      "location": "",
+      "download": "https://github.com/AinTunez/DarkScript3/releases",
+      "type": 0,
+      "display": true
+    },
+    "darkscriptsb": {
+      "name": "DarkScript(SmithBox)",
+      "location": "",
+      "download": "https://github.com/vawser/Smithbox/releases",
+      "type": 0,
+      "display": true
+    },
+    "fbximporter": {
+      "name": "FBX Importer",
+      "location": "",
+      "download": "https://github.com/The12thAvenger/FbxImporter/releases",
+      "type": 0,
+      "display": true
+    },
+    "uxmselunpacker": {
+      "name": "UXM Selective Unpacker",
+      "location": "",
+      "download": "https://github.com/Nordgaren/UXM-Selective-Unpack/releases",
+      "type": 0,
+      "display": true
+    },
+    "soulsformats": {
+      "name": "SoulsFormats",
+      "location": "",
+      "download": "https://github.com/JKAnderson/SoulsFormats/releases",
+      "type": 0,
+      "display": true
+    },
+    "dsanimstudio": {
+      "name": "DSAnimStudio",
+      "location": "",
+      "download": "https://github.com/Meowmaritus/DSAnimStudio/releases",
+      "type": 0,
+      "display": true
+    }
+  },
+  "links": [
+    {
+      "category": "Wiki",
+      "links": {
+        "Home": "http://soulsmodding.wikidot.com/",
+        "FAQ": "http://soulsmodding.wikidot.com/faq",
+        "Tutorials": "http://soulsmodding.wikidot.com/tutorial:main",
+        "Topics": "http://soulsmodding.wikidot.com/topic:main",
+        "Tools": "http://soulsmodding.wikidot.com/tool:main",
+        "Formats": "http://soulsmodding.wikidot.com/format:main",
+        "Params": "http://soulsmodding.wikidot.com/param:main",
+        "Reference": "http://soulsmodding.wikidot.com/reference:main",
+        "Wiki Discord": "https://discord.gg/mT2JJjx"
+      }
+    },
+    {
+      "category": "Mod Managers",
+      "links": {
+        "Mod Engine(DS2)": "https://github.com/rainergeis/ModEngine-DS2-Compatible/releases",
+        "Mod Engine 2(DSR,DS3,Sekiro,ER,AC6)": "https://github.com/soulsmods/ModEngine2/releases",
+        "Metis Mod Launcher(ER)": "https://www.nexusmods.com/eldenring/mods/3102"
+      }
+    },
+    {
+      "category": "Misc",
+      "links": {}
+    }
+  ],
+  "miscexe": [
+    {
+      "id": "games",
+      "title": "Games",
+      "items": {
+        "Dark Souls": "",
+        "Dark Souls: Remastered": "",
+        "Dark Souls 2": "",
+        "Sekiro": "",
+        "Elden Ring": "",
+        "Armored Core 6": ""
+      }
+    }
+  ]
+}

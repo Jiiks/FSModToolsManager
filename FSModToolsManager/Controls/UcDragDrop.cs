@@ -1,13 +1,16 @@
 ﻿using FSModToolsManager.Core;
 using FSModToolsManager.Properties;
 using System.Diagnostics;
+using System.Security.Policy;
 
 namespace FSModToolsManager.Controls;
 internal class UcDragDrop : FlowLayoutPanel {
 
     private Panel _ddHandler;
+    private Tool _tool;
 
     public UcDragDrop(Tool tool) {
+        _tool = tool;
         Text = tool.Name;
         //RowCount = 2;
         ///ColumnCount = 1;
@@ -42,7 +45,10 @@ internal class UcDragDrop : FlowLayoutPanel {
 
     private void DdHandler_DragDrop(object? sender, DragEventArgs e) {
         var files = (string[])e.Data.GetData(DataFormats.FileDrop);
-        foreach (var file in files) Debug.WriteLine(file);
+        //foreach (var file in files) Debug.WriteLine(file);
+        try {
+            Process.Start(new ProcessStartInfo(_tool.Location, files) { UseShellExecute = true });
+        } catch (Exception ex) { } // TODO THIS IS ALL TEMPORARY
     }
 
     private void DdHandler_DragLeave(object? sender, EventArgs e) {

@@ -1,6 +1,5 @@
 ﻿using FSModToolsManager.Properties;
 using FSModToolsManager.Services;
-using System.Diagnostics;
 using System.Reflection;
 
 namespace FSModToolsManager.Controls;
@@ -10,9 +9,6 @@ internal partial class FormMain : FormBase {
         SetStyle(ControlStyles.ResizeRedraw, true);
 
         InitializeComponent();
-
-        
-
 
         menuStrip1.Renderer = new UcToolStripProfessionalRenderer();
         menuStrip1.BackColor = Color.FromArgb(40, 40, 40);

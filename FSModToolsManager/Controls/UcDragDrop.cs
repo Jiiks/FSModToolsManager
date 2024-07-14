@@ -8,8 +8,8 @@ internal class UcDragDrop : GroupBox {
         Text = tool.Name;
 
         //Absolute size for now
-        Width = 50;
-        Height = 50;
+        Width = 100;
+        Height = 100;
 
         var ddHandler = new Panel() {
             AllowDrop = true,

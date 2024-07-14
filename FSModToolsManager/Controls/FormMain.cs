@@ -27,6 +27,8 @@ internal partial class FormMain : FormBase {
                     Visible = v.DisplayInMain
                 };
                 launchersLayoutPanel.Controls.Add(v.Ctrl);
+            } else {
+                ddContainer.Controls.Add(new UcDragDrop(v));
             }
         }
 

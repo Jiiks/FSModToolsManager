@@ -90,12 +90,30 @@
       "id": "games",
       "title": "Games",
       "items": {
-        "Dark Souls": "",
-        "Dark Souls: Remastered": "",
-        "Dark Souls 2": "",
-        "Sekiro": "",
-        "Elden Ring": "",
-        "Armored Core 6": ""
+        "Dark Souls": {
+          "location": "",
+          "killcommand": ""
+        },
+        "Dark Souls: Remastered": {
+          "location": "",
+          "killcommand": ""
+        },
+        "Dark Souls 2": {
+          "location": "",
+          "killcommand": ""
+        },
+        "Sekiro": {
+          "location": "",
+          "killcommand": ""
+        },
+        "Elden Ring": {
+          "location": "",
+          "killcommand": "taskkill /F /IM eldenring.exe"
+        },
+        "Armored Core 6": {
+          "location": "",
+          "killcommand": ""
+        }
       }
     }
   ]

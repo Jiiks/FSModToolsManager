@@ -50,12 +50,20 @@ public class Utils {
         else OpenUrl(TOOL_DB_URL);
     }
 
-    public void OpenUrl(string url) {
-        Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
+    public void OpenUrl(string url, bool shellExecute = true) {
+        Process.Start(new ProcessStartInfo(url) { UseShellExecute = shellExecute });
     }
 
-    public void StartExecutable(string fPath) {
-        Process.Start(new ProcessStartInfo(fPath) { UseShellExecute = true });
+    public void StartExecutable(string fPath, bool shellExecute = true) {
+        Process.Start(new ProcessStartInfo(fPath) { UseShellExecute = shellExecute });
+    }
+
+    public Process ExecuteCommandLineFile(string fPath) {
+        
+        var psInfo = new ProcessStartInfo("cmd.exe", "/c " + Path.GetFileName(fPath));
+        psInfo.WorkingDirectory = Path.GetDirectoryName(fPath);
+
+        return Process.Start(psInfo);
     }
 
 }

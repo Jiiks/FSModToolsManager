@@ -11,10 +11,11 @@ internal partial class FormMain : FormBase {
 
         InitializeComponent();
 
+        
 
 
         menuStrip1.Renderer = new UcToolStripProfessionalRenderer();
-        menuStrip1.BackColor = Color.FromArgb(30, 30, 30);
+        menuStrip1.BackColor = Color.FromArgb(40, 40, 40);
 
         var version = Assembly.GetExecutingAssembly().GetName().Version;
         label1.Text += $" - v{version}";
@@ -78,48 +79,49 @@ internal partial class FormMain : FormBase {
     }
 
     private void btnMin_MouseEnter(object sender, EventArgs e) {
-        btnMin.BackgroundImage = Resources.minimize_hover;
+        btnMin.Image = Resources.minimize_hover;
     }
 
     private void btnMin_MouseLeave(object sender, EventArgs e) {
-        btnMin.BackgroundImage = Resources.minimize_normal;
+        btnMin.Image = Resources.minimize_normal;
     }
 
     private void btnMax_MouseEnter(object sender, EventArgs e) {
         if (WindowState == FormWindowState.Maximized) {
-            btnMax.BackgroundImage = Resources.restore_hover;
+            btnMax.Image = Resources.restore_hover;
             return;
         }
-        btnMax.BackgroundImage = Resources.maximize_hover;
+        btnMax.Image = Resources.maximize_hover;
     }
 
     private void btnMax_MouseLeave(object sender, EventArgs e) {
         if (WindowState == FormWindowState.Maximized) {
-            btnMax.BackgroundImage = Resources.restore_normal;
+            btnMax.Image = Resources.restore_normal;
             return;
         }
-        btnMax.BackgroundImage = Resources.maximize_normal;
+        
+        btnMax.Image = Resources.maximize_normal;
     }
 
     private void btnClose_MouseEnter(object sender, EventArgs e) {
-        btnClose.BackgroundImage = Resources.close_hover;
+        btnClose.Image = Resources.close_hover;
     }
 
     private void btnClose_MouseLeave(object sender, EventArgs e) {
-        btnClose.BackgroundImage = Resources.close_normal;
+        btnClose.Image = Resources.close_normal;
     }
 
     private void btnPin_Click(object sender, EventArgs e) {
         TopMost = !TopMost;
-        btnPin.BackgroundImage = TopMost ? Resources.pinned_normal : Resources.notpinned_normal;
+        btnPin.Image = TopMost ? Resources.pinned_normal : Resources.notpinned_normal;
     }
 
     private void btnPin_MouseEnter(object sender, EventArgs e) {
-        btnPin.BackgroundImage = TopMost ? Resources.pinned_hover : Resources.notpinned_hover;
+        btnPin.Image = TopMost ? Resources.pinned_hover : Resources.notpinned_hover;
     }
 
     private void btnPin_MouseLeave(object sender, EventArgs e) {
-        btnPin.BackgroundImage = TopMost ? Resources.pinned_normal : Resources.notpinned_normal;
+        btnPin.Image = TopMost ? Resources.pinned_normal : Resources.notpinned_normal;
     }
 }
 

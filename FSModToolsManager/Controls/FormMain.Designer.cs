@@ -59,7 +59,7 @@ partial class FormMain {
         tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
         tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
         tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
-        tableLayoutPanel1.Size = new Size(1194, 723);
+        tableLayoutPanel1.Size = new Size(1216, 575);
         tableLayoutPanel1.TabIndex = 0;
         // 
         // launchersLayoutPanel
@@ -72,14 +72,14 @@ partial class FormMain {
         launchersLayoutPanel.Name = "launchersLayoutPanel";
         launchersLayoutPanel.RowCount = 1;
         launchersLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-        launchersLayoutPanel.Size = new Size(704, 707);
+        launchersLayoutPanel.Size = new Size(717, 559);
         launchersLayoutPanel.TabIndex = 0;
         // 
         // ddContainer
         // 
-        ddContainer.Location = new Point(718, 8);
+        ddContainer.Location = new Point(731, 8);
         ddContainer.Name = "ddContainer";
-        ddContainer.Size = new Size(427, 612);
+        ddContainer.Size = new Size(427, 559);
         ddContainer.TabIndex = 1;
         // 
         // menuStrip1
@@ -89,7 +89,7 @@ partial class FormMain {
         menuStrip1.Location = new Point(3, 50);
         menuStrip1.Name = "menuStrip1";
         menuStrip1.Padding = new Padding(0);
-        menuStrip1.Size = new Size(1194, 24);
+        menuStrip1.Size = new Size(1216, 24);
         menuStrip1.TabIndex = 1;
         menuStrip1.Text = "menuStrip1";
         // 
@@ -109,7 +109,7 @@ partial class FormMain {
         tableLayoutPanel2.Controls.Add(btnClose, 6, 0);
         tableLayoutPanel2.Controls.Add(btnMax, 4, 0);
         tableLayoutPanel2.Controls.Add(btnMin, 2, 0);
-        tableLayoutPanel2.Location = new Point(848, 0);
+        tableLayoutPanel2.Location = new Point(870, 0);
         tableLayoutPanel2.Margin = new Padding(0);
         tableLayoutPanel2.Name = "tableLayoutPanel2";
         tableLayoutPanel2.RowCount = 1;
@@ -120,18 +120,16 @@ partial class FormMain {
         // btnPin
         // 
         btnPin.BackColor = Color.FromArgb(31, 31, 31);
-        btnPin.BackgroundImage = Properties.Resources.notpinned_normal;
         btnPin.BackgroundImageLayout = ImageLayout.Stretch;
         btnPin.Dock = DockStyle.Fill;
-       // btnPin.FlatAppearance.BorderSize = 0;
         btnPin.FlatStyle = FlatStyle.Flat;
         btnPin.Font = new Font("Calibri", 9F, FontStyle.Bold);
         btnPin.ForeColor = Color.FromArgb(87, 79, 87);
-        btnPin.Location = new Point(3, 3);
+        btnPin.Image = Properties.Resources.notpinned_normal;
+        btnPin.Location = new Point(3, 0);
         btnPin.Name = "btnPin";
-        btnPin.Size = new Size(74, 44);
+        btnPin.Size = new Size(74, 50);
         btnPin.TabIndex = 3;
-       // btnPin.UseVisualStyleBackColor = false;
         btnPin.Click += btnPin_Click;
         btnPin.MouseEnter += btnPin_MouseEnter;
         btnPin.MouseLeave += btnPin_MouseLeave;
@@ -139,18 +137,16 @@ partial class FormMain {
         // btnClose
         // 
         btnClose.BackColor = Color.FromArgb(31, 31, 31);
-        btnClose.BackgroundImage = Properties.Resources.close_normal;
         btnClose.BackgroundImageLayout = ImageLayout.Stretch;
         btnClose.Dock = DockStyle.Fill;
-      //  btnClose.FlatAppearance.BorderSize = 0;
         btnClose.FlatStyle = FlatStyle.Flat;
         btnClose.Font = new Font("Calibri", 9F);
         btnClose.ForeColor = Color.FromArgb(87, 79, 87);
-        btnClose.Location = new Point(273, 3);
+        btnClose.Image = Properties.Resources.close_normal;
+        btnClose.Location = new Point(273, 0);
         btnClose.Name = "btnClose";
-        btnClose.Size = new Size(74, 44);
+        btnClose.Size = new Size(74, 50);
         btnClose.TabIndex = 2;
-       // btnClose.UseVisualStyleBackColor = false;
         btnClose.Click += btnClose_Click;
         btnClose.MouseEnter += btnClose_MouseEnter;
         btnClose.MouseLeave += btnClose_MouseLeave;
@@ -158,18 +154,16 @@ partial class FormMain {
         // btnMax
         // 
         btnMax.BackColor = Color.FromArgb(31, 31, 31);
-        btnMax.BackgroundImage = Properties.Resources.maximize_normal;
         btnMax.BackgroundImageLayout = ImageLayout.Stretch;
         btnMax.Dock = DockStyle.Fill;
-       // btnMax.FlatAppearance.BorderSize = 0;
         btnMax.FlatStyle = FlatStyle.Flat;
         btnMax.Font = new Font("Calibri", 9F);
         btnMax.ForeColor = Color.FromArgb(87, 79, 87);
-        btnMax.Location = new Point(183, 3);
+        btnMax.Image = Properties.Resources.maximize_normal;
+        btnMax.Location = new Point(183, 0);
         btnMax.Name = "btnMax";
-        btnMax.Size = new Size(74, 44);
+        btnMax.Size = new Size(74, 50);
         btnMax.TabIndex = 1;
-        //btnMax.UseVisualStyleBackColor = false;
         btnMax.Click += btnMax_Click;
         btnMax.MouseEnter += btnMax_MouseEnter;
         btnMax.MouseLeave += btnMax_MouseLeave;
@@ -177,18 +171,16 @@ partial class FormMain {
         // btnMin
         // 
         btnMin.BackColor = Color.FromArgb(31, 31, 31);
-        btnMin.BackgroundImage = Properties.Resources.minimize_normal;
         btnMin.BackgroundImageLayout = ImageLayout.Stretch;
         btnMin.Dock = DockStyle.Fill;
-      //  btnMin.FlatAppearance.BorderSize = 0;
         btnMin.FlatStyle = FlatStyle.Flat;
         btnMin.Font = new Font("Calibri", 9F, FontStyle.Bold);
         btnMin.ForeColor = Color.FromArgb(87, 79, 87);
-        btnMin.Location = new Point(93, 3);
+        btnMin.Image = Properties.Resources.minimize_normal;
+        btnMin.Location = new Point(93, 0);
         btnMin.Name = "btnMin";
-        btnMin.Size = new Size(74, 44);
+        btnMin.Size = new Size(74, 50);
         btnMin.TabIndex = 0;
-       // btnMin.UseVisualStyleBackColor = false;
         btnMin.Click += btnMin_Click;
         btnMin.MouseEnter += btnMin_MouseEnter;
         btnMin.MouseLeave += btnMin_MouseLeave;
@@ -225,7 +217,7 @@ partial class FormMain {
         BorderColour = Color.FromArgb(31, 31, 31);
         BorderWidth = 3;
         CaptionColour = Color.FromArgb(31, 31, 31);
-        ClientSize = new Size(1200, 800);
+        ClientSize = new Size(1222, 652);
         Controls.Add(pictureBox1);
         Controls.Add(label1);
         Controls.Add(tableLayoutPanel2);

@@ -6,7 +6,8 @@ Supports adding all the tools you'd like as well as drag & drop tools.
 
 This is mainly for my personal use but maybe someone finds a use for it.
 
-![image](https://github.com/user-attachments/assets/bbd4f557-3c67-4750-a5ab-2bd6b5a7ced6)
+![image](https://github.com/user-attachments/assets/c3a810a8-c0ad-451f-b6dc-0e18a542e703)
+
 
 # Adding new tools
 Currently(0.1.0) You'll have to edit the `config.user.json` file to add additional tools until I get around to adding ui functionality for it.

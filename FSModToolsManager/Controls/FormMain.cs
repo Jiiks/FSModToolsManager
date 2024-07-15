@@ -54,7 +54,7 @@ internal partial class FormMain : FormBase {
             menuStrip1.Items.Add(new UcToolStripItem(addDialog.Title));
             menuStrip1.Items.Add(addBtn);
         };
-        menuStrip1.Items.Add(addBtn);
+        //menuStrip1.Items.Add(addBtn);
 
     }
 

@@ -9,6 +9,18 @@ Supports adding all the tools you'd like as well as drag & drop tools.
 # Adding new tools
 Currently(0.1.0) You'll have to edit the `config.user.json` file to add additional tools until I get around to adding ui functionality for it.
 
+
+ For
+
+- Dark Souls
+- Dark Souls: Remastered
+- Dark Souls 2
+- Dark Souls 3
+- Elden Ring
+- Sekiro
+- Armored Core 6
+- Basically anything you can think of
+
 # Contributing
 Contributions are welcome! If you find any issues or have suggestions, feel free to open an issue or submit a pull request.
 

@@ -8,6 +8,7 @@ internal class MenuSetMiscExecutables : UcToolStripItem {
     private IConfig _config;
     private Utils.Utils _utils;
     private MiscExe _miscExeSet;
+    private Process? _process;
 
     public MenuSetMiscExecutables(IConfig cfg, Utils.Utils utils, MiscExe miscExeSet) {
         Text = miscExeSet.Title;
@@ -20,24 +21,42 @@ internal class MenuSetMiscExecutables : UcToolStripItem {
 
             var locate = new UcToolStripItem("Locate");
             var launch = new UcToolStripItem("Launch");
+            var kill = new UcToolStripItem("Kill");
 
             locate.Click += (s, e) => {
                 if (!_utils.Ofd(out var fPath)) return;
-                _miscExeSet.Items[k] = fPath;
+                var me = _miscExeSet.Items[k];
+                me.Location = fPath;
+                _miscExeSet.Items[k] = me;
                 _config.Save(_miscExeSet);
             };
             launch.Click += (s, e) => {
                 var fPath = _miscExeSet.Items[k];
-                if(fPath != null || fPath != string.Empty) {
-                    if(File.Exists(fPath)) {
-                        _utils.StartExecutable(fPath);
+                if(fPath.Location != null || fPath.Location != string.Empty) {
+                    if(File.Exists(fPath.Location)) {
+                        if (fPath.KillCommand != null && fPath.KillCommand != string.Empty) {
+                            Process.Start("cmd.exe", $"/c {fPath.KillCommand}");
+                            Thread.Sleep(100);
+                        }
+
+                        if(fPath.Location.EndsWith(".bat")) {
+                            _process = _utils.ExecuteCommandLineFile(fPath.Location);
+                            return;
+                        }
+
+                        _utils.StartExecutable(fPath.Location, false);
                         return;
                     }
                 }
                 locate.PerformClick();
             };
 
-            launcher.DropDown.Items.AddRange([locate, launch]);
+            kill.Click += (s, e) => {
+                var fPath = _miscExeSet.Items[k];
+                if(fPath.KillCommand != null && fPath.KillCommand != string.Empty) Process.Start("cmd.exe", $"/c {fPath.KillCommand}");
+            };
+
+            launcher.DropDown.Items.AddRange([locate, launch, kill]);
 
             DropDownItems.Add(launcher);
         }
@@ -72,6 +91,7 @@ internal class MenuSetMiscExecutables : UcToolStripItem {
         root.DropDown.Items.AddRange([runBtn, locateBtn, downloadBtn, dispBtn]);
         DropDown.Items.Add(root);
     }
+
 
 
 

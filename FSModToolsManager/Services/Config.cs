@@ -21,13 +21,22 @@ public interface IConfig {
     public IEnumerable<MiscExe> GetMiscExeSets();
 }
 
+public struct MiscExeInfo {
+    [JsonPropertyName("location")]
+    public string Location { get; set; }
+
+    [JsonPropertyName("killcommand")]
+    public string KillCommand { get; set; }
+
+}
+
 public struct MiscExe {
     [JsonPropertyName("id")]
     public string Id { get; set; }
     [JsonPropertyName("title")]
     public string Title { get; set; }
     [JsonPropertyName("items")]
-    public IDictionary<string, string> Items { get; set; }
+    public IDictionary<string, MiscExeInfo> Items { get; set; }
 
 }
 
@@ -78,6 +87,7 @@ internal class Config : IConfig {
         _conf = _utils.DeserializeFromFile<Conf>("config.json");
         if(File.Exists("config.user.json")) {
             var userConf = _utils.DeserializeFromFile<Conf>("config.user.json");
+            if (userConf.MiscExecutables == null) userConf.MiscExecutables = [];
             foreach(var(k, v) in userConf.Tools) {
                 _conf.Tools[k] = v;
             }
@@ -97,7 +107,8 @@ internal class Config : IConfig {
 
                 uLinks.Add(exists);
             }
-            _conf.Links = uLinks;
+            if(uLinks.Count > 0) // Retain defaults
+                _conf.Links = uLinks;
 
             var uExecutables = new List<MiscExe>();
             foreach(var miscExeSet in userConf.MiscExecutables) {
@@ -113,7 +124,8 @@ internal class Config : IConfig {
 
                 uExecutables.Add(exists);
             }
-            _conf.MiscExecutables = uExecutables;
+            if(uExecutables.Count > 0) // Retain defaults
+                _conf.MiscExecutables = uExecutables;
         }
 
         foreach (var (k, v) in _conf.Tools) {

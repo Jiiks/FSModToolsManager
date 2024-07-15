@@ -19,9 +19,15 @@ public interface IConfig {
     public IDictionary<string, Tool> GetTools();
     public IEnumerable<LinkSet> GetLinks();
     public IEnumerable<MiscExe> GetMiscExeSets();
+    public MiscExe GetMiscExeSet(string id);
+    public MiscExeInfo? GetMiscExeInfo(string id);
 }
 
 public struct MiscExeInfo {
+    [JsonPropertyName("tag")]
+    public string Tag {  get; set; }
+    [JsonPropertyName("icon")]
+    public string Icon { get; set; }
     [JsonPropertyName("location")]
     public string Location { get; set; }
 
@@ -70,6 +76,14 @@ internal class Config : IConfig {
     public IDictionary<string, Tool> GetTools() => _conf.Tools;
     public IEnumerable<LinkSet> GetLinks() => _conf.Links;
     public IEnumerable<MiscExe> GetMiscExeSets() => _conf.MiscExecutables;
+
+    public MiscExe GetMiscExeSet(string id) => _conf.MiscExecutables.Find(x => x.Id == id);
+    public MiscExeInfo? GetMiscExeInfo(string id) {
+        foreach(var set in _conf.MiscExecutables) {
+            if (set.Items.ContainsKey(id)) return set.Items[id];
+        }
+        return null;
+    }
 
     public Tool GetTool(string id) => _conf.Tools[id];
 

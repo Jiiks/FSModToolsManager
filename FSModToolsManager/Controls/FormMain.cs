@@ -56,6 +56,11 @@ internal partial class FormMain : FormBase {
         };
         //menuStrip1.Items.Add(addBtn);
 
+        var games = cfg.GetMiscExeSet("games");
+        foreach(var game in games.Items) {
+            gameLauncherPanel.Controls.Add(new UcLauncherBtn(game.Key, game.Value, utils, cfg));
+        }
+
     }
 
  

@@ -28,6 +28,7 @@ partial class FormMain {
         tableLayoutPanel1 = new TableLayoutPanel();
         launchersLayoutPanel = new TableLayoutPanel();
         ddContainer = new Panel();
+        gameLauncherPanel = new FlowLayoutPanel();
         menuStrip1 = new MenuStrip();
         tableLayoutPanel2 = new TableLayoutPanel();
         btnPin = new Label();
@@ -49,12 +50,13 @@ partial class FormMain {
         tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 5F));
         tableLayoutPanel1.Controls.Add(launchersLayoutPanel, 1, 1);
         tableLayoutPanel1.Controls.Add(ddContainer, 2, 1);
+        tableLayoutPanel1.Controls.Add(gameLauncherPanel, 1, 0);
         tableLayoutPanel1.Dock = DockStyle.Fill;
         tableLayoutPanel1.Location = new Point(3, 74);
         tableLayoutPanel1.Margin = new Padding(10);
         tableLayoutPanel1.Name = "tableLayoutPanel1";
         tableLayoutPanel1.RowCount = 3;
-        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
+        tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 66F));
         tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
         tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 5F));
         tableLayoutPanel1.Size = new Size(1216, 575);
@@ -66,19 +68,30 @@ partial class FormMain {
         launchersLayoutPanel.ColumnCount = 1;
         launchersLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
         launchersLayoutPanel.Dock = DockStyle.Fill;
-        launchersLayoutPanel.Location = new Point(8, 8);
+        launchersLayoutPanel.Location = new Point(8, 69);
         launchersLayoutPanel.Name = "launchersLayoutPanel";
         launchersLayoutPanel.RowCount = 1;
         launchersLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 50F));
-        launchersLayoutPanel.Size = new Size(717, 559);
+        launchersLayoutPanel.Size = new Size(717, 498);
         launchersLayoutPanel.TabIndex = 0;
         // 
         // ddContainer
         // 
-        ddContainer.Location = new Point(731, 8);
+        ddContainer.Location = new Point(731, 69);
         ddContainer.Name = "ddContainer";
-        ddContainer.Size = new Size(427, 559);
+        ddContainer.Size = new Size(427, 498);
         ddContainer.TabIndex = 1;
+        // 
+        // gameLauncherPanel
+        // 
+        gameLauncherPanel.BackColor = Color.FromArgb(64, 64, 64);
+        tableLayoutPanel1.SetColumnSpan(gameLauncherPanel, 2);
+        gameLauncherPanel.Dock = DockStyle.Fill;
+        gameLauncherPanel.Location = new Point(8, 3);
+        gameLauncherPanel.Name = "gameLauncherPanel";
+        gameLauncherPanel.Padding = new Padding(2);
+        gameLauncherPanel.Size = new Size(1199, 60);
+        gameLauncherPanel.TabIndex = 2;
         // 
         // menuStrip1
         // 
@@ -232,4 +245,5 @@ partial class FormMain {
     private TableLayoutPanel launchersLayoutPanel;
     private Panel ddContainer;
     private Label btnPin;
+    private FlowLayoutPanel gameLauncherPanel;
 }

@@ -24,7 +24,7 @@ internal class MenuSetMiscExecutables : UcToolStripItem {
             var kill = new UcToolStripItem("Kill");
 
             locate.Click += (s, e) => {
-                if (!_utils.Ofd(out var fPath)) return;
+                if (!_utils.Ofd(out var fPath, "Executable files (*.exe;*.bat)|*.exe;*.bat|All files (*.*)|*.*")) return;
                 var me = _miscExeSet.Items[k];
                 me.Location = fPath;
                 _miscExeSet.Items[k] = me;

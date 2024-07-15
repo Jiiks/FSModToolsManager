@@ -4,6 +4,8 @@ FSModToolsManager is an application for launching and managing mod tools related
 
 Supports adding all the tools you'd like as well as drag & drop tools.
 
+This is mainly for my personal use but maybe someone finds a use for it.
+
 ![image](https://github.com/user-attachments/assets/bbd4f557-3c67-4750-a5ab-2bd6b5a7ced6)
 
 # Adding new tools

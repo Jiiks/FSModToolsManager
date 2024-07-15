@@ -9,7 +9,7 @@
     <PackageProjectUrl>https://github.com/Jiiks/FSModToolsManager</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Jiiks/FSModToolsManager</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <AssemblyVersion>0.1.1.0</AssemblyVersion>
+    <AssemblyVersion>0.1.2.0</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
 	<ProductVersion>$(AssemblyVersion)</ProductVersion>
     <SignAssembly>False</SignAssembly>
